@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbxegimr3aux3"]
+
+[ext_resource type="Script" path="res://entities/ball/ball.gd" id="1_g7njx"]
+[ext_resource type="AudioStream" uid="uid://bbghd7f02jalw" path="res://assets/bip-1.wav" id="2_lrd1r"]
+[ext_resource type="AudioStream" uid="uid://bkat13eco6smh" path="res://assets/bip-2.wav" id="3_f1j3w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gquu"]
+size = Vector2(50, 50)
+
+[sub_resource type="Gradient" id="Gradient_1erx5"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tj52k"]
+gradient = SubResource("Gradient_1erx5")
+width = 50
+height = 50
+
+[node name="Ball" type="CharacterBody2D"]
+position = Vector2(960, 540)
+collision_layer = 3
+script = ExtResource("1_g7njx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7gquu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_tj52k")
+
+[node name="RacketSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_lrd1r")
+
+[node name="WallSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_f1j3w")

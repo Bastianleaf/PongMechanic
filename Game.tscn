@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxxtcrptpq4m2"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_a80ju"]
+[ext_resource type="PackedScene" uid="uid://dx20qxc7rqtww" path="res://scenes/field/Field.tscn" id="1_whlur"]
+[ext_resource type="PackedScene" uid="uid://b42basleworr6" path="res://ui/title_screen/TitleScreen.tscn" id="2_3gl6w"]
+[ext_resource type="PackedScene" uid="uid://8lrtbr3fvcbe" path="res://entities/racket/Racket.tscn" id="2_tdpd5"]
+[ext_resource type="PackedScene" uid="uid://bbxegimr3aux3" path="res://entities/ball/Ball.tscn" id="3_mqp7d"]
+[ext_resource type="Script" path="res://controller/player_1_input_component.gd" id="4_fyuff"]
+[ext_resource type="Script" path="res://controller/player_2_input_component.gd" id="5_xq3iw"]
+[ext_resource type="PackedScene" uid="uid://bf2x1sc7dcog8" path="res://ui/hud/Hud.tscn" id="7_57i1d"]
+[ext_resource type="PackedScene" uid="uid://bi14hjk56867o" path="res://ui/final_screen/FinalScreen.tscn" id="8_b5e3n"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_a80ju")
+
+[node name="Field" parent="." instance=ExtResource("1_whlur")]
+
+[node name="Racket" parent="." instance=ExtResource("2_tdpd5")]
+position = Vector2(100, 540)
+
+[node name="Player1InputComponent" type="Node" parent="Racket"]
+script = ExtResource("4_fyuff")
+
+[node name="Racket2" parent="." instance=ExtResource("2_tdpd5")]
+position = Vector2(1821, 540)
+
+[node name="Player2InputComponent" type="Node" parent="Racket2"]
+script = ExtResource("5_xq3iw")
+ball_path = NodePath("../../Ball")
+
+[node name="Ball" parent="." instance=ExtResource("3_mqp7d")]
+
+[node name="Hud" parent="." instance=ExtResource("7_57i1d")]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="FinalScreen" parent="." instance=ExtResource("8_b5e3n")]
+visible = false
+
+[node name="TitleCanvas" type="CanvasLayer" parent="."]
+
+[node name="TitleScreen" parent="TitleCanvas" instance=ExtResource("2_3gl6w")]
+
+[connection signal="goal_left" from="Field" to="." method="_on_field_goal_left"]
+[connection signal="goal_right" from="Field" to="." method="_on_field_goal_right"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="exit" from="FinalScreen" to="." method="_on_final_screen_exit"]
+[connection signal="play_again" from="FinalScreen" to="." method="_on_final_screen_play_again"]
+[connection signal="exit_game" from="TitleCanvas/TitleScreen" to="." method="_on_title_screen_exit_game"]
+[connection signal="start_1p_game" from="TitleCanvas/TitleScreen" to="." method="_on_title_screen_start_1p_game"]
+[connection signal="start_2p_game" from="TitleCanvas/TitleScreen" to="." method="_on_title_screen_start_2p_game"]

@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi14hjk56867o"]
+
+[ext_resource type="Script" path="res://ui/final_screen/final_screen.gd" id="1_dx148"]
+[ext_resource type="FontFile" uid="uid://dgwyvvn7lw2ml" path="res://assets/AppleIIALTPro.otf" id="1_ijhhp"]
+[ext_resource type="FontFile" uid="uid://fhaimtd5kok5" path="res://assets/AppleIIPro.otf" id="2_j0q14"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ldw4m"]
+font = ExtResource("1_ijhhp")
+font_size = 150
+
+[sub_resource type="LabelSettings" id="LabelSettings_7pblv"]
+font = ExtResource("2_j0q14")
+font_size = 80
+
+[node name="FinalScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dx148")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -45.5
+offset_right = 105.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="ResultMessage" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "You Win"
+label_settings = SubResource("LabelSettings_ldw4m")
+horizontal_alignment = 1
+
+[node name="ContinueMessage" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Want another round?"
+label_settings = SubResource("LabelSettings_7pblv")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="NewRoundButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_j0q14")
+theme_override_font_sizes/font_size = 80
+text = "New Round"
+icon_alignment = 1
+
+[node name="ExitButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_j0q14")
+theme_override_font_sizes/font_size = 80
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/NewRoundButton" to="." method="_on_new_round_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

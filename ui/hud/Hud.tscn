@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://bf2x1sc7dcog8"]
+
+[ext_resource type="Script" path="res://ui/hud/hud.gd" id="1_1cor4"]
+[ext_resource type="FontFile" uid="uid://dgwyvvn7lw2ml" path="res://assets/AppleIIALTPro.otf" id="2_iyke1"]
+[ext_resource type="FontFile" uid="uid://fhaimtd5kok5" path="res://assets/AppleIIPro.otf" id="3_g0lpd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_enrx3"]
+bg_color = Color(0.0705882, 0.0705882, 0.0705882, 0.647059)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nh7m7"]
+font = ExtResource("2_iyke1")
+font_size = 150
+
+[sub_resource type="LabelSettings" id="LabelSettings_hom4b"]
+font = ExtResource("3_g0lpd")
+font_size = 200
+
+[sub_resource type="LabelSettings" id="LabelSettings_rfvvv"]
+font = ExtResource("3_g0lpd")
+font_size = 200
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1cor4")
+
+[node name="CountDownContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(1920, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.5
+offset_top = -53.0
+offset_right = 21.5
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_enrx3")
+
+[node name="CenterContainer" type="CenterContainer" parent="CountDownContainer"]
+layout_mode = 2
+
+[node name="ActionText" type="Label" parent="CountDownContainer/CenterContainer"]
+layout_mode = 2
+text = "3"
+label_settings = SubResource("LabelSettings_nh7m7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -240.0
+offset_right = 240.0
+offset_bottom = 276.0
+grow_horizontal = 2
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="ScorePlayerOne" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_hom4b")
+
+[node name="ScorePlayerTwo" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_rfvvv")

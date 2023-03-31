@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://b42basleworr6"]
+
+[ext_resource type="FontFile" uid="uid://dgwyvvn7lw2ml" path="res://assets/AppleIIALTPro.otf" id="1_cgfow"]
+[ext_resource type="Script" path="res://ui/title_screen/title_screen.gd" id="1_iq4v2"]
+[ext_resource type="FontFile" uid="uid://fhaimtd5kok5" path="res://assets/AppleIIPro.otf" id="2_gjthv"]
+
+[sub_resource type="Gradient" id="Gradient_wovit"]
+offsets = PackedFloat32Array(0, 0.954839)
+colors = PackedColorArray(0.0156863, 0.0156863, 0.0156863, 1, 0.0156863, 0.0156863, 0.0156863, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_68vbb"]
+gradient = SubResource("Gradient_wovit")
+width = 1920
+height = 1080
+use_hdr = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_3qvhd"]
+font = ExtResource("1_cgfow")
+font_size = 200
+
+[sub_resource type="LabelSettings" id="LabelSettings_01v6y"]
+font = ExtResource("2_gjthv")
+font_size = 50
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iq4v2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = SubResource("GradientTexture2D_68vbb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -45.5
+offset_right = 105.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Pong
+Mechanic"
+label_settings = SubResource("LabelSettings_3qvhd")
+horizontal_alignment = 1
+
+[node name="ContinueMessage" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "A simple pong game"
+label_settings = SubResource("LabelSettings_01v6y")
+horizontal_alignment = 1
+
+[node name="1P Game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_gjthv")
+theme_override_font_sizes/font_size = 80
+text = "1P Game"
+icon_alignment = 1
+expand_icon = true
+
+[node name="2P Game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_gjthv")
+theme_override_font_sizes/font_size = 80
+text = "2P Game"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_gjthv")
+theme_override_font_sizes/font_size = 80
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/1P Game" to="." method="_on_1p_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/2P Game" to="." method="_on_2p_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

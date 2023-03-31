@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://8lrtbr3fvcbe"]
+
+[ext_resource type="Script" path="res://entities/racket/racket.gd" id="1_aap6e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_17bjw"]
+size = Vector2(50, 200)
+
+[sub_resource type="Gradient" id="Gradient_30rbr"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lsr4a"]
+gradient = SubResource("Gradient_30rbr")
+width = 50
+height = 200
+
+[node name="Racket" type="CharacterBody2D" groups=["rackets"]]
+script = ExtResource("1_aap6e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_17bjw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_lsr4a")
