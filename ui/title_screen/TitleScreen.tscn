@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b42basleworr6"]
+[gd_scene load_steps=8 format=3 uid="uid://b42basleworr6"]
 
 [ext_resource type="FontFile" uid="uid://dgwyvvn7lw2ml" path="res://assets/AppleIIALTPro.otf" id="1_cgfow"]
 [ext_resource type="Script" path="res://ui/title_screen/title_screen.gd" id="1_iq4v2"]
 [ext_resource type="FontFile" uid="uid://fhaimtd5kok5" path="res://assets/AppleIIPro.otf" id="2_gjthv"]
-[ext_resource type="FontFile" uid="uid://83jwvt2ll2nq" path="res://assets/AppleIINEGPro.otf" id="4_6yuu1"]
 
 [sub_resource type="Gradient" id="Gradient_wovit"]
 offsets = PackedFloat32Array(0, 0.954839)
@@ -21,7 +20,7 @@ font_size = 200
 
 [sub_resource type="LabelSettings" id="LabelSettings_fwf2y"]
 line_spacing = 4.0
-font = ExtResource("4_6yuu1")
+font = ExtResource("2_gjthv")
 font_size = 17
 
 [node name="TitleScreen" type="Control"]
@@ -93,7 +92,7 @@ offset_top = 960.0
 offset_right = 1866.0
 offset_bottom = 1048.0
 text = "Bastián Martínez
-2023 - v.1.0.0
+2023 - v.1.0.1
 More games on
 www.bmartinez.cl"
 label_settings = SubResource("LabelSettings_fwf2y")
