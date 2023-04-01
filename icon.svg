@@ -1,7 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="267px" height="271px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g><path style="opacity:1" fill="#3f3f3f" d="M -0.5,-0.5 C 88.5,-0.5 177.5,-0.5 266.5,-0.5C 266.5,89.8333 266.5,180.167 266.5,270.5C 177.5,270.5 88.5,270.5 -0.5,270.5C -0.5,180.167 -0.5,89.8333 -0.5,-0.5 Z"/></g>
-<g><path style="opacity:1" fill="#fefffe" d="M 50.5,27.5 C 67.1667,27.5 83.8333,27.5 100.5,27.5C 100.5,94.1667 100.5,160.833 100.5,227.5C 83.8333,227.5 67.1667,227.5 50.5,227.5C 50.5,160.833 50.5,94.1667 50.5,27.5 Z"/></g>
-<g><path style="opacity:1" fill="#fefffe" d="M 172.5,184.5 C 189.167,184.5 205.833,184.5 222.5,184.5C 222.5,201.167 222.5,217.833 222.5,234.5C 205.833,234.5 189.167,234.5 172.5,234.5C 172.5,217.833 172.5,201.167 172.5,184.5 Z"/></g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250"><defs><style>.cls-1{fill:#fff;}</style></defs><g id="Capa_2" data-name="Capa 2"><rect width="250" height="250"/></g><g id="Capa_1" data-name="Capa 1"><path class="cls-1" d="M50.05,225V25h50.21V225Z" transform="translate(0 0)"/><path class="cls-1" d="M200.08,150H150V100h50.05Z" transform="translate(0 0)"/></g></svg>

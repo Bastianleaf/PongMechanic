@@ -88,11 +88,12 @@ text = "Exit"
 
 [node name="Copyright" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1505.0
-offset_top = 982.0
-offset_right = 1869.0
-offset_bottom = 1060.0
-text = "Bastián Martínez - 2023
+offset_left = 1502.0
+offset_top = 960.0
+offset_right = 1866.0
+offset_bottom = 1048.0
+text = "Bastián Martínez
+2023 - v.1.0.0
 More games on
 www.bmartinez.cl"
 label_settings = SubResource("LabelSettings_fwf2y")
