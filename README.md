@@ -1,4 +1,4 @@
-# PongMechanic
+# PongMechanic - [Play it on itch.io](https://bastianleaf.itch.io/pong-mechanic)
 Pong Mechanic is a classic arcade game developed using the Godot4 game engine. Inspired by the timeless gameplay of the original Pong, is a game designed to help players understand the mechanics of the original Pong game. By faithfully recreating the classic gameplay mechanics, players can experience the same simple yet challenging gameplay that made Pong a timeless classic.
 
 
