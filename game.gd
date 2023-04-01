@@ -12,6 +12,9 @@ func _process(delta: float) -> void:
 	if  time_left > 1:
 		hud.update_action_text(str(round(time_left)))
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().reload_current_scene()
 
 func _on_field_goal_left() -> void:
 	score_player_two += 1

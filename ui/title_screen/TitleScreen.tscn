@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b42basleworr6"]
+[gd_scene load_steps=9 format=3 uid="uid://b42basleworr6"]
 
 [ext_resource type="FontFile" uid="uid://dgwyvvn7lw2ml" path="res://assets/AppleIIALTPro.otf" id="1_cgfow"]
 [ext_resource type="Script" path="res://ui/title_screen/title_screen.gd" id="1_iq4v2"]
 [ext_resource type="FontFile" uid="uid://fhaimtd5kok5" path="res://assets/AppleIIPro.otf" id="2_gjthv"]
+[ext_resource type="FontFile" uid="uid://83jwvt2ll2nq" path="res://assets/AppleIINEGPro.otf" id="4_6yuu1"]
 
 [sub_resource type="Gradient" id="Gradient_wovit"]
 offsets = PackedFloat32Array(0, 0.954839)
@@ -18,9 +19,10 @@ use_hdr = true
 font = ExtResource("1_cgfow")
 font_size = 200
 
-[sub_resource type="LabelSettings" id="LabelSettings_01v6y"]
-font = ExtResource("2_gjthv")
-font_size = 50
+[sub_resource type="LabelSettings" id="LabelSettings_fwf2y"]
+line_spacing = 4.0
+font = ExtResource("4_6yuu1")
+font_size = 17
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -48,7 +50,7 @@ offset_right = 105.0
 offset_bottom = 45.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 60
+theme_override_constants/separation = 80
 alignment = 1
 
 [node name="Title" type="Label" parent="VBoxContainer"]
@@ -58,17 +60,11 @@ Mechanic"
 label_settings = SubResource("LabelSettings_3qvhd")
 horizontal_alignment = 1
 
-[node name="ContinueMessage" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "A simple pong game"
-label_settings = SubResource("LabelSettings_01v6y")
-horizontal_alignment = 1
-
 [node name="1P Game" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_gjthv")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 60
 text = "1P Game"
 icon_alignment = 1
 expand_icon = true
@@ -77,7 +73,7 @@ expand_icon = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_gjthv")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 60
 text = "2P Game"
 icon_alignment = 1
 expand_icon = true
@@ -87,8 +83,20 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_gjthv")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 60
 text = "Exit"
+
+[node name="Copyright" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1505.0
+offset_top = 982.0
+offset_right = 1869.0
+offset_bottom = 1060.0
+text = "Bastián Martínez - 2023
+More games on
+www.bmartinez.cl"
+label_settings = SubResource("LabelSettings_fwf2y")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/1P Game" to="." method="_on_1p_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/2P Game" to="." method="_on_2p_game_pressed"]

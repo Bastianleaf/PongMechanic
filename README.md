@@ -1,6 +1,8 @@
 # PongMechanic
 A simple Pong game on Godot 4
 
+Press [esc] to reset game.
+
 ## 1P Mode
 Use [W] and [S] to move.
 

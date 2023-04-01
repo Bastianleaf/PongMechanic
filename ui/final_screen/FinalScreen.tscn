@@ -10,7 +10,7 @@ font_size = 150
 
 [sub_resource type="LabelSettings" id="LabelSettings_7pblv"]
 font = ExtResource("2_j0q14")
-font_size = 80
+font_size = 70
 
 [node name="FinalScreen" type="Control"]
 layout_mode = 3
@@ -45,7 +45,7 @@ horizontal_alignment = 1
 
 [node name="ContinueMessage" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Want another round?"
+text = "Do you want another round?"
 label_settings = SubResource("LabelSettings_7pblv")
 horizontal_alignment = 1
 
